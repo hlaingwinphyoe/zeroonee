@@ -3,55 +3,53 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "PureLanding - Beautiful Shadcn UI Landing Page",
+  title: "ZeroOnee",
   description:
-    "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+    "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let’s build your future.",
   keywords: [
-    "PureLanding",
-    "PureLanding Landing Page",
-    "PureLanding Landing Page Template",
-    "PureLanding Page",
-    "Shadcn UI Landing Page",
-    "Shadcn UI Blocks",
-    "Shadcn UI",
-    "Landing Page",
-    "Tailwind CSS Landing Page",
-    "Beautiful Shadcn UI Landing Page",
-    "Next.js 15 Landing Page",
-    "Simple Landing Page",
-    "Landing Page Template",
-    "Landing Page Design",
+    "ZeroOnee",
+    "Zero One",
+    "Website development services",
+    "Custom web development",
+    "Professional website design",
+    "Business website solutions",
+    "Responsive website development",
+    "SEO-friendly web development",
+    "Web application development",
+    "Modern web design and development",
+    "Build your website with Zeroonee",
   ],
   openGraph: {
     type: "website",
-    siteName: "PureLanding",
+    siteName: "ZeroOnee",
     locale: "en_US",
-    url: "https://shadcn-landing-page.vercel.app",
-    title: "PureLanding - Beautiful Shadcn UI Landing Page",
+    url: "https://zeroonee.vercel.app",
+    title: "ZeroOnee",
     description:
-      "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+      "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let’s build your future.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "PureLanding Preview",
+        alt: "ZeroOnee Team",
       },
     ],
   },
   authors: [
     {
-      name: "Akash Moradiya",
-      url: "https://shadcnui-blocks.com",
+      name: "Zeroonee Team",
     },
   ],
-  creator: "Akash Moradiya",
+  creator: "Zeroonee Team",
   icons: [
     {
       rel: "icon",
@@ -102,7 +100,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TooltipProvider>{children}</TooltipProvider>
+          <TooltipProvider>
+          <Navbar />
+            <main className="pt-16 xs:pt-20 sm:pt-20">
+              {children}
+            </main>
+            <Footer />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

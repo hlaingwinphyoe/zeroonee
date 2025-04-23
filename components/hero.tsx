@@ -1,43 +1,40 @@
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, CirclePlay } from "lucide-react";
-import React from "react";
-import LogoCloud from "./logo-cloud";
+import { cn } from "@/lib/utils";
+import { CircleArrowDown } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="min-h-[calc(100vh-6rem)] flex flex-col items-center py-20 px-6">
-      <div className="md:mt-6 flex items-center justify-center">
-        <div className="text-center max-w-2xl">
-          <Badge className="bg-primary rounded-full py-1 border-none">
-            v1.0.0 is available now! 🚀
-          </Badge>
-          <h1 className="mt-6 max-w-[20ch] text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-            Customized Shadcn UI Blocks & Components
-          </h1>
-          <p className="mt-6 max-w-[60ch] xs:text-lg">
-            Explore a collection of Shadcn UI blocks and components, ready to
-            preview and copy. Streamline your development workflow with
-            easy-to-implement examples.
-          </p>
-          <div className="mt-12 flex flex-col sm:flex-row items-center sm:justify-center gap-4">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto rounded-full text-base"
-            >
-              Get Started <ArrowUpRight className="!h-5 !w-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto rounded-full text-base shadow-none"
-            >
-              <CirclePlay className="!h-5 !w-5" /> Watch Demo
-            </Button>
-          </div>
+    <div className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.1}
+        duration={3}
+        className={cn(
+          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+          "inset-x-0 h-full skew-y-12"
+        )}
+      />
+      <div className="relative z-[1] text-center max-w-screen-md">
+        <Badge className="rounded-full border-none px-5 py-1">
+          ZeroOnee Team
+        </Badge>
+        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
+          Build More Than Just a Website — Build a Digital Experience.
+        </h1>
+        <p className="mt-6 text-[17px] md:text-lg">
+        We bring ideas to life with intuitive design, and we specialize in creating custom websites that are fast, beautiful, and built to perform. 🚀
+        </p>
+        <div className="mt-12 flex items-center justify-center gap-4">
+          <Link href="#services">
+          <Button size="lg" className="rounded-full text-base">
+            See What We Do <CircleArrowDown className="ml-2 !h-5.5 !w-5.5" />
+          </Button>
+          </Link>
         </div>
       </div>
-      <LogoCloud className="mt-24 max-w-3xl mx-auto" />
     </div>
   );
 };
