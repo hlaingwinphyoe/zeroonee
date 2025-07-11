@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth scroll-pt-12;
+  }
+
+  body {
+    @apply text-foreground;
+  }
+
   :root {
     --background: 0 0% 100%;
 
@@ -102,18 +114,6 @@
     --chart-4: 280 65% 60%;
 
     --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  html {
-    @apply scroll-smooth scroll-pt-12;
-  }
-  body {
-    @apply text-foreground;
   }
 }
 

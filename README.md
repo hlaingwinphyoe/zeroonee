@@ -1,66 +1,107 @@
-# PureLanding - Beautiful Shadcn UI Landing Page
+# ZeroOnee - Professional Website Development Services
 
-A modern, responsive landing page template built with Next.js, Tailwind CSS, and Shadcn UI, and Shadcn UI Blocks.
+A modern, responsive business website built with Next.js, Tailwind CSS, and Shadcn UI, showcasing ZeroOnee's professional website development services.
 
-## Demo
+## About ZeroOnee
 
-[Live Demo](https://pure-landing-shadcnui-template.vercel.app/)
+ZeroOnee offers top-quality website development services — modern design, clean code, and a focus on user experience. We help businesses build their digital future with professional, responsive websites that drive results.
 
-## Preview
+## Live Website
 
-![Preview](./public/preview.png)
+[Visit ZeroOnee](https://www.zeroonee.com/)
 
 ## Features
 
-- 🎨 Modern and clean design
-- 📱 Fully responsive layout
-- 🎯 Built with Next.js 15
-- 💅 Styled with Tailwind CSS `3.4` & `4.0`
-- 🧩 Built with [Shadcn UI](https://ui.shadcn.com) and [Shadcn UI Blocks](https://shadcnui-blocks.com)
-- 🌙 Dark mode support
+- 🎨 Modern and clean design with professional branding
+- 📱 Fully responsive layout optimized for all devices
+- 🎯 Built with Next.js 15 and React 19
+- 💅 Styled with Tailwind CSS 3.4
+- 🧩 Built with [Shadcn UI](https://ui.shadcn.com) components
+- 🌙 Dark mode support with system preference detection
+- ⚡ Optimized performance with Turbopack
+- 🔍 SEO-friendly with comprehensive metadata
+- 🎭 Smooth animations and interactions
+
+## Website Sections
+
+- **Hero Section** - Compelling introduction and call-to-action
+- **About Section** - Company information and values
+- **Services Section** - Website development services offered
+- **CTA Banner** - Strategic call-to-action placement
+- **Contact Section** - Easy communication channels
+- **Footer** - Additional links and information
+
+## Technology Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS 3.4
+- **UI Components**: Shadcn UI with Radix UI primitives
+- **Animations**: Motion library and Tailwind CSS animations
+- **Icons**: Lucide React
+- **Particles**: TSParticles for interactive backgrounds
+- **Theme**: Next-themes for dark/light mode
+- **Font**: Geist Sans for modern typography
 
 ## Getting Started
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/akash3444/pure-landing-shadcnui-template.git
-cd pure-landing-shadcnui-template
+git clone <repository-url>
+cd team_website
 ```
 
-2. To use Tailwind CSS v4.0:
-
-- Ensure you’re using Node.js 20 or higher.
-- Switch to the tailwind-v4 branch:
-
-```bash
-git checkout tailwind-v4
-```
-
-3. Install dependencies:
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-4. Start the development server:
+3. Start the development server:
 
 ```bash
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## Development Scripts
+
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
 ## Customization
 
-1. Replace the placeholder images with your own content.
-2. Modify the text and styles in the components to match your brand and messaging.
-3. Add your own features and sections as needed.
+1. Update the metadata in `app/layout.tsx` to match your brand
+2. Replace the placeholder content in components with your business information
+3. Update the logo and images in the `public` directory
+4. Modify the color scheme and styling in `tailwind.config.ts`
+5. Add or remove sections based on your business needs
 
-## Why this template?
+## SEO Features
 
-This project is a base template for a landing page. It is built with Next.js, Tailwind CSS, Shadcn UI, and Shadcn UI Blocks. It is a great starting point for a landing page. You can customized the content and media files as per your needs. It is not intended to be a complete solution for a landing page. It is intended to be a starting point for a landing page.
+- Comprehensive metadata for search engines
+- Open Graph tags for social media sharing
+- Structured data for better search visibility
+- Optimized images and assets
+- Fast loading times with Next.js optimizations
+
+## Why ZeroOnee?
+
+This website demonstrates our expertise in modern web development. We focus on:
+
+- **Clean Code**: Maintainable and scalable codebase
+- **Modern Design**: Professional and user-friendly interfaces
+- **Performance**: Fast loading and smooth interactions
+- **SEO Optimization**: Search engine friendly structure
+- **Responsive Design**: Perfect experience on all devices
+
+## Contact
+
+Ready to build your website? Contact the ZeroOnee team to discuss your project requirements.
 
 ## Contributing
 
-If you have any suggestions or improvements, please create an issue or submit a pull request.
+This is a business website for ZeroOnee. For internal improvements, please follow the established coding standards and review process.
