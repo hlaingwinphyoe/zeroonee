@@ -13,7 +13,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "ZeroOnee",
   description:
-    "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let’s build your future.",
+    "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let's build your future.",
   keywords: [
     "ZeroOnee",
     "Zero One",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "ZeroOnee",
     locale: "en_US",
-    url: "https://zeroonee.vercel.app",
+    url: "https://www.zeroonee.com/",
     title: "ZeroOnee",
     description:
-      "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let’s build your future.",
+      "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let's build your future.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og_image.png",
         width: 1200,
         height: 630,
         alt: "ZeroOnee Team",
@@ -89,6 +89,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   manifest: "/site.webmanifest",
+  metadataBase: new URL("https://www.zeroonee.com"),
 };
 
 export default function RootLayout({
@@ -101,10 +102,8 @@ export default function RootLayout({
       <body className={`${geistSans.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider>
-          <Navbar />
-            <main className="pt-16 xs:pt-20 sm:pt-20">
-              {children}
-            </main>
+            <Navbar />
+            <main className="pt-16 xs:pt-20 sm:pt-20">{children}</main>
             <Footer />
           </TooltipProvider>
         </ThemeProvider>

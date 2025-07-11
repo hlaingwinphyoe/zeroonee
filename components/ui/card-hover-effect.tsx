@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -25,7 +26,7 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <a
+        <Link
           href="#"
           key={item?.id}
           className="relative group  block p-2 h-full w-full"
@@ -51,12 +52,12 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <div className="mb-3 h-10 w-10 flex items-center justify-center bg-gray-200 dark:bg-muted rounded-full">
-                {item.icon}
+              {item.icon}
             </div>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -90,7 +91,12 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-black dark:text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4
+      className={cn(
+        "text-black dark:text-zinc-100 font-bold tracking-wide mt-4",
+        className
+      )}
+    >
       {children}
     </h4>
   );
