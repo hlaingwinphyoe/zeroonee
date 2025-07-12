@@ -39,6 +39,10 @@ const services = [
     id: 3,
     title: "UI/UX Design",
   },
+  {
+    id: 4,
+    title: "Landing Page & Portfolios",
+  },
 ];
 
 const Footer = () => {
@@ -100,18 +104,19 @@ const Footer = () => {
 
   return (
     <footer className="dark:border-t mt-40 dark bg-background text-foreground">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto p-6 sm:p-0">
         <div className="lg:grid lg:grid-cols-5">
-          <div className="lg:col-span-2 flex flex-col justify-center space-y-4">
+          <div className="lg:col-span-2 flex flex-col justify-center items-center sm:items-start space-y-4">
             <div ref={logoRef}>
               <Image
                 src="/full_logo_white.png"
                 alt="Brand Logo"
                 width={150}
                 height={150}
+                className="mb-2 w-auto h-auto"
                 priority
               />
-              <div className="w-40 h-10 relative">
+              <div className="w-52 h-10 relative">
                 <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-transparent via-gray-500 to-transparent h-[2px] w-3/4 blur-sm" />
                 <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-transparent via-gray-500 to-transparent h-px w-3/4" />
                 <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-gray-500 to-transparent h-[5px] w-1/4 blur-sm" />
@@ -129,7 +134,10 @@ const Footer = () => {
                 <div className="absolute inset-0 w-full h-full bg-transparent [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
               </div>
             </div>
-            <p ref={descRef} className="text-gray-700 dark:text-gray-300">
+            <p
+              ref={descRef}
+              className="text-gray-700 dark:text-gray-300 text-center sm:text-left"
+            >
               ZeroOnee is a dynamic web and app development team driven by a
               passion for innovation, design, and technology.
             </p>
@@ -143,12 +151,16 @@ const Footer = () => {
 
           <div className="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <div ref={el => { linkGroupsRef.current[0] = el; }}>
-                <p className="font-medium text-gray-900 dark:text-white">
+              <div
+                ref={(el) => {
+                  linkGroupsRef.current[0] = el;
+                }}
+              >
+                <p className="font-medium text-gray-900 dark:text-white text-center sm:text-left">
                   Services
                 </p>
 
-                <ul className="mt-6 space-y-4 text-sm">
+                <ul className="mt-6 space-y-4 text-sm text-center sm:text-left">
                   {services.map((service) => (
                     <li key={service.id}>
                       <Link
@@ -162,12 +174,16 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div ref={el => { linkGroupsRef.current[1] = el; }}>
-                <p className="font-medium text-gray-900 dark:text-white">
+              <div
+                ref={(el) => {
+                  linkGroupsRef.current[1] = el;
+                }}
+              >
+                <p className="font-medium text-gray-900 dark:text-white text-center sm:text-left">
                   Quick Links
                 </p>
 
-                <ul className="mt-6 space-y-4 text-sm">
+                <ul className="mt-6 space-y-4 text-sm text-center sm:text-left">
                   {footerLinks.map((footerLink) => (
                     <li key={footerLink.title}>
                       <Link
@@ -184,7 +200,7 @@ const Footer = () => {
 
             <div className="mt-12 border-t border-gray-100 pt-12">
               <div className="sm:flex sm:items-center sm:justify-between">
-                <ul className="flex flex-wrap gap-4 text-xs">
+                <ul className="flex flex-wrap gap-4 text-xs justify-center sm:justify-start">
                   <li>
                     <Link
                       href="/terms"
@@ -206,7 +222,7 @@ const Footer = () => {
                   </li>
                 </ul>
 
-                <p className="mt-8 text-xs text-gray-500 dark:text-white sm:mt-0">
+                <p className="mt-8 text-xs text-gray-500 dark:text-white sm:mt-0 text-center sm:text-left">
                   &copy; 2025 ZeroOnee. All rights reserved.
                 </p>
               </div>
