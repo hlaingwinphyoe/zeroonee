@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     "Web application development",
     "Modern web design and development",
     "Build your website with Zeroonee",
+    "Ecommerce website development",
+    "Ecommerce website design ",
+    "Bangkok e-commerce website development",
+    "Agency Landing Pages",
   ],
   openGraph: {
     type: "website",
@@ -37,12 +41,20 @@ export const metadata: Metadata = {
       "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let's build your future.",
     images: [
       {
-        url: "/og_image.png",
+        url: "https://www.zeroonee.com/og_image.png",
         width: 1200,
         height: 630,
         alt: "ZeroOnee Team",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ZeroOnee",
+    description:
+      "Zeroonee offers top-quality website development services — modern design, clean code, and a focus on user experience. Let's build your future.",
+    images: ["https://www.zeroonee.com/og_image.png"],
+    creator: "@zeroonee",
   },
   authors: [
     {

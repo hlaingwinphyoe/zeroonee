@@ -31,8 +31,7 @@ export default function Services() {
           </span>
         </>
       ),
-      icon: <Code className="w-8 h-8 text-primary" />,
-      className: "col-span-1 row-span-1",
+      icon: <Code className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
     },
     {
       title: "Responsive Design",
@@ -47,8 +46,7 @@ export default function Services() {
           </span>
         </>
       ),
-      icon: <Smartphone className="w-8 h-8 text-primary" />,
-      className: "col-span-1 row-span-1",
+      icon: <Smartphone className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
     },
     {
       title: "E-commerce Website Setup",
@@ -63,8 +61,7 @@ export default function Services() {
           </span>
         </>
       ),
-      icon: <BarChart3 className="w-8 h-8 text-primary" />,
-      className: "col-span-1 row-span-1",
+      icon: <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
     },
     {
       title: "Landing Page & Portfolio Sites",
@@ -83,8 +80,7 @@ export default function Services() {
           </span>
         </>
       ),
-      icon: <Users className="w-8 h-8 text-primary" />,
-      className: "col-span-2 row-span-1",
+      icon: <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
     },
     {
       title: "Website Redesign & Optimization",
@@ -107,8 +103,7 @@ export default function Services() {
           </ul>
         </>
       ),
-      icon: <Cpu className="w-8 h-8 text-primary" />,
-      className: "col-span-1 row-span-2",
+      icon: <Cpu className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
     },
     {
       title: "CMS Integration",
@@ -123,8 +118,7 @@ export default function Services() {
           </span>
         </>
       ),
-      icon: <Database className="w-8 h-8 text-primary" />,
-      className: "col-span-1 row-span-1",
+      icon: <Database className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
     },
     {
       title: "Domain, Hosting & Deployment",
@@ -139,8 +133,7 @@ export default function Services() {
           </span>
         </>
       ),
-      icon: <Code className="w-8 h-8 text-primary" />,
-      className: "col-span-1 row-span-1",
+      icon: <Code className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
     },
   ];
 
@@ -201,25 +194,30 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" className="relative py-20 overflow-hidden">
+    <section id="services" className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
       {/* <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-black dark:via-black dark:to-black pointer-events-none" /> */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="shiny-container">
             <ShinyText text="Our Services" speed={3} />
           </div>
-          <h2 ref={titleRef} className="my-6 text-4xl md:text-5xl font-bold text-center tracking-tight px-6">
+          <h2 ref={titleRef} className="my-4 sm:my-6 text-3xl sm:text-4xl md:text-5xl font-bold text-center tracking-tight px-4 sm:px-6">
             Digital Solutions
           </h2>
-          <p ref={descRef} className="text-lg mb-20 text-foreground/70">
+          <p ref={descRef} className="text-base sm:text-lg mb-16 sm:mb-20 text-foreground/70 px-4">
             Digital solutions for every business need, crafted with precision
             and innovation.
           </p>
         </div>
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[minmax(180px,1fr)] overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(160px,1fr)] sm:auto-rows-[minmax(180px,1fr)] gap-4 sm:gap-0 overflow-hidden">
           {services.map((service, i) => (
-            <div key={service.title} ref={el => { cardsRef.current[i] = el; }} className={service.className}>
+            <div key={service.title} ref={el => { cardsRef.current[i] = el; }} className={cn(
+              "col-span-1",
+              // Responsive grid classes
+              service.title === "Landing Page & Portfolio Sites" && "sm:col-span-2 lg:col-span-2",
+              service.title === "Website Redesign & Optimization" && "sm:row-span-2 lg:row-span-2"
+            )}>
               <FeatureCard {...service} />
             </div>
           ))}
@@ -259,17 +257,17 @@ const FeatureCard = ({
     <SpotlightCard
       spotlightColor={spotlightColor}
       className={cn(
-        "flex flex-col items-start p-8 border border-neutral-400 dark:border-white/[0.1] transition-all duration-300 bg-transparent backdrop-blur-sm h-full min-h-[180px] rounded-none",
+        "flex flex-col items-start p-4 sm:p-6 lg:p-8 border border-neutral-400 dark:border-white/[0.1] transition-all duration-300 bg-transparent backdrop-blur-sm h-full min-h-[160px] sm:min-h-[180px] rounded-none",
         className
       )}
     >
-      <div className="flex items-center gap-4 mb-3">
+      <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
         {icon}
-        <span className="text-base font-bold tracking-tight text-foreground">
+        <span className="text-sm sm:text-base font-bold tracking-tight text-foreground">
           {title}
         </span>
       </div>
-      <div className="mt-2">{description}</div>
+      <div className="mt-1 sm:mt-2">{description}</div>
     </SpotlightCard>
   );
 };
