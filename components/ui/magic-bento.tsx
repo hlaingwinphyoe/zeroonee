@@ -31,45 +31,6 @@ const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = "132, 0, 255";
 const MOBILE_BREAKPOINT = 768;
 
-const cardData: BentoCardProps[] = [
-  {
-    color: "#0a0a0a",
-    title: "Analytics",
-    description: "Track user behavior",
-    label: "Insights",
-  },
-  {
-    color: "#0a0a0a",
-    title: "Dashboard",
-    description: "Centralized data view",
-    label: "Overview",
-  },
-  {
-    color: "#0a0a0a",
-    title: "Collaboration",
-    description: "Work together seamlessly",
-    label: "Teamwork",
-  },
-  {
-    color: "#0a0a0a",
-    title: "Automation",
-    description: "Streamline workflows",
-    label: "Efficiency",
-  },
-  {
-    color: "#0a0a0a",
-    title: "Integration",
-    description: "Connect favorite tools",
-    label: "Connectivity",
-  },
-  {
-    color: "#0a0a0a",
-    title: "Security",
-    description: "Enterprise-grade protection",
-    label: "Protection",
-  },
-];
-
 const createParticleElement = (
   x: number,
   y: number,
@@ -574,7 +535,7 @@ const MagicBento: React.FC<BentoProps> = ({
   const gridRef = useRef<HTMLDivElement>(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
-  const displayCards = cards || cardData;
+  const displayCards = cards || [];
 
   return (
     <>
@@ -586,9 +547,11 @@ const MagicBento: React.FC<BentoProps> = ({
             --glow-intensity: 0;
             --glow-radius: 200px;
             --glow-color: ${glowColor};
-            --border-color: #3a3a3a;
-            --background-dark: #0a0a0a;
-            --white: hsl(0, 0%, 100%);
+            --border-color: hsl(var(--border));
+            --background-dark: hsl(var(--card));
+            --text-primary: hsl(var(--card-foreground));
+            --text-secondary: hsl(var(--muted-foreground));
+            --white: hsl(var(--foreground));
             --primary: rgba(180, 180, 180, 1);
             --primary-glow: rgba(180, 180, 180, 0.2);
             --primary-border: rgba(180, 180, 180, 0.8);
@@ -726,7 +689,7 @@ const MagicBento: React.FC<BentoProps> = ({
             const cardStyle = {
               backgroundColor: card.color || "var(--background-dark)",
               borderColor: "var(--border-color)",
-              color: "var(--white)",
+              color: "var(--text-primary)",
               "--glow-x": "50%",
               "--glow-y": "50%",
               "--glow-intensity": "0",
@@ -746,20 +709,20 @@ const MagicBento: React.FC<BentoProps> = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__header flex justify-between gap-3 relative text-white">
+                  <div className="card__header flex justify-between gap-3 relative text-[var(--text-primary)]">
                     {card.icon && (
                       <span className="card__icon">{card.icon}</span>
                     )}
                     <span className="card__label text-base">{card.label}</span>
                   </div>
-                  <div className="card__content flex flex-col relative text-white">
+                  <div className="card__content flex flex-col relative text-[var(--text-primary)]">
                     <h3
                       className={`card__title font-semibold text-lg m-0 mb-1 ${textAutoHide ? "text-clamp-1" : ""}`}
                     >
                       {card.title}
                     </h3>
                     <div
-                      className={`card__description text-muted-foreground text-sm leading-5 opacity-90 ${textAutoHide ? "text-clamp-2" : ""}`}
+                      className={`card__description text-[var(--text-secondary)] text-sm leading-5 opacity-90 ${textAutoHide ? "text-clamp-2" : ""}`}
                     >
                       {card.description}
                     </div>

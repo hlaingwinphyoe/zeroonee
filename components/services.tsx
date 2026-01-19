@@ -22,7 +22,6 @@ export default function Services() {
       description:
         "Launch a secure, user-friendly online store with inventory management, and customer checkout experience.",
       icon: <BarChart3 className="w-6 h-6 text-gray-400" />,
-      color: "#0a0a0a",
     },
     {
       title: "Responsive Design",
@@ -30,7 +29,6 @@ export default function Services() {
       description:
         "Adapts flawlessly to any screen size—desktop, tablet, or mobile—ensuring a seamless user experience across all devices.",
       icon: <Smartphone className="w-6 h-6 text-gray-400" />,
-      color: "#0a0a0a",
     },
     {
       title: "Custom Website Development",
@@ -47,7 +45,6 @@ export default function Services() {
         </ul>
       ),
       icon: <Code className="w-6 h-6 text-gray-400" />,
-      color: "#0a0a0a",
     },
     {
       title: "Website Redesign",
@@ -64,7 +61,6 @@ export default function Services() {
         </ul>
       ),
       icon: <Cpu className="w-6 h-6 text-gray-400" />,
-      color: "#0a0a0a",
     },
     {
       title: "Landing Pages",
@@ -72,7 +68,6 @@ export default function Services() {
       description:
         "Converting landing pages with compelling layouts, clear calls-to-action, and optimized to turn visitors into loyal customers.",
       icon: <Users className="w-6 h-6 text-gray-400" />,
-      color: "#0a0a0a",
     },
     {
       title: "CMS Integration",
@@ -80,7 +75,6 @@ export default function Services() {
       description:
         "Easily manage your website content with headless CMS—update text, images, and blog posts anytime.",
       icon: <Database className="w-6 h-6 text-gray-400" />,
-      color: "#0a0a0a",
     },
   ];
 

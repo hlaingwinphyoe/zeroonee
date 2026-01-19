@@ -50,7 +50,7 @@ const About = () => {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       rotatingRef.current,
@@ -66,7 +66,7 @@ const About = () => {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       descRef.current,
@@ -82,7 +82,7 @@ const About = () => {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       featuresRef.current,
@@ -99,7 +99,7 @@ const About = () => {
           start: "top 85%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
   }, []);
 
@@ -110,12 +110,15 @@ const About = () => {
           <div className="shiny-container">
             <ShinyText text="Who We Are" className="text-sm" speed={3} />
           </div>
-          <h1 ref={titleRef} className="my-6 flex items-center justify-center gap-3 text-3xl sm:text-5xl md:text-6xl font-bold">
+          <h1
+            ref={titleRef}
+            className="my-6 flex items-center justify-center gap-3 text-3xl sm:text-5xl md:text-6xl font-bold"
+          >
             Creative
             <span ref={rotatingRef}>
               <RotatingText
                 texts={["Solution", "Website", "Team", "Design", "Development"]}
-                mainClassName="px-2 sm:px-2 md:px-3 bg-black dark:bg-white dark:text-black text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                mainClassName="px-2 sm:px-2 md:px-3.5 bg-black dark:bg-white dark:text-black text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-[20px]"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -140,8 +143,10 @@ const About = () => {
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              ref={el => { featuresRef.current[i] = el; }}
-              className="flex flex-col bg-background border rounded-xl py-6 px-5 shadow-md"
+              ref={(el) => {
+                featuresRef.current[i] = el;
+              }}
+              className="flex flex-col bg-background border rounded-[20px] py-6 px-5 shadow-md"
             >
               <div className="mb-3 h-10 w-10 flex items-center justify-center bg-muted rounded-full">
                 {feature.icon}

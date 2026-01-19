@@ -132,7 +132,7 @@ function Projects() {
                 <div
                   className={`flex flex-col overflow-hidden w-[17.5rem] h-[20rem] sm:h-[22rem]`}
                 >
-                  <div className="w-full h-full relative rounded-2xl overflow-hidden border">
+                  <div className="w-full h-full relative rounded-[20px] overflow-hidden border">
                     <Image
                       src={project.image}
                       alt={project.title}
