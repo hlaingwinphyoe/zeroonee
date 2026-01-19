@@ -65,7 +65,7 @@ const Footer = () => {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       descRef.current,
@@ -81,7 +81,7 @@ const Footer = () => {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       linkGroupsRef.current,
@@ -98,7 +98,7 @@ const Footer = () => {
           start: "top 85%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
   }, []);
 
@@ -213,7 +213,7 @@ const Footer = () => {
 
                   <li>
                     <Link
-                      href="/privacy"
+                      href="/policy"
                       className="text-gray-500 dark:text-white transition hover:opacity-75"
                     >
                       {" "}
