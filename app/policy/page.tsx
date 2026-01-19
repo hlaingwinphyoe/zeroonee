@@ -15,13 +15,8 @@ export default function PolicyPage() {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[128px] opacity-50 dark:opacity-20" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[128px] opacity-50 dark:opacity-20" />
-      </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-12 md:py-20">
+      <div className="relative max-w-4xl mx-auto px-6 py-12 md:py-20">
         <div className="mb-8">
           <Link
             href="/"
@@ -88,7 +83,7 @@ export default function PolicyPage() {
                     Identity Data
                   </strong>
                   <span className="text-sm text-muted-foreground">
-                    Includes first name, maiden name, last name, username or
+                    Includes first name, middle name, last name, username or
                     similar identifier.
                   </span>
                 </div>
