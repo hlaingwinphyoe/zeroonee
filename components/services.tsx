@@ -1,6 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import React, { useRef, useEffect } from "react";
 import {
   Code,
   Smartphone,
@@ -10,136 +9,84 @@ import {
   Users,
 } from "lucide-react";
 import ShinyText from "./ui/shiny-text";
-import SpotlightCard from "./ui/spotlight-card";
-import { useTheme } from "next-themes";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MagicBento, { BentoCardProps } from "./ui/magic-bento";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
-  const services = [
+  const services: BentoCardProps[] = [
     {
-      title: "Custom Website Development",
-      description: (
-        <>
-          <span className="block font-semibold mb-1">
-            Professional, high-performance websites
-          </span>
-          <span className="block text-sm text-muted-foreground">
-            Built for your business using modern technologies. Fast, flexible,
-            and reliable—whether you need a business site or a custom web app.
-          </span>
-        </>
-      ),
-      icon: <Code className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
+      title: "E-commerce Setup",
+      label: "E-Commerce",
+      description:
+        "Launch a secure, user-friendly online store with inventory management, and customer checkout experience.",
+      icon: <BarChart3 className="w-6 h-6 text-gray-400" />,
+      color: "#0a0a0a",
     },
     {
       title: "Responsive Design",
-      description: (
-        <>
-          <span className="block font-semibold mb-1">
-            Seamless experience on any device
-          </span>
-          <span className="block text-sm text-muted-foreground">
-            Your site adapts perfectly to any screen size—desktop, tablet, or
-            mobile.
-          </span>
-        </>
-      ),
-      icon: <Smartphone className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
+      label: "Design",
+      description:
+        "Adapts flawlessly to any screen size—desktop, tablet, or mobile—ensuring a seamless user experience across all devices.",
+      icon: <Smartphone className="w-6 h-6 text-gray-400" />,
+      color: "#0a0a0a",
     },
     {
-      title: "E-commerce Website Setup",
+      title: "Custom Website Development",
+      label: "Development",
       description: (
-        <>
-          <span className="block font-semibold mb-1">
-            Sell online with ease
-          </span>
-          <span className="block text-sm text-muted-foreground">
-            Secure, user-friendly online stores with shopping carts, payment
-            integration, and product management.
-          </span>
-        </>
+        <ul className="list-disc leading-8 pl-5 text-muted-foreground space-y-1 mt-1">
+          <li>Modern, clean visual design with custom branding</li>
+          <li>Improved navigation and user experience</li>
+          <li>Faster load times and better performance</li>
+          <li>SEO and analytics optimization</li>
+          <li>Mobile-friendly and accessible design</li>
+          <li>Designed to increase leads, sales, and engagement</li>
+          <li>Ongoing support and maintenance included</li>
+        </ul>
       ),
-      icon: <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
+      icon: <Code className="w-6 h-6 text-gray-400" />,
+      color: "#0a0a0a",
     },
     {
-      title: "Landing Page & Portfolio Sites",
+      title: "Website Redesign",
+      label: "Optimization",
       description: (
-        <>
-          <span className="block font-semibold mb-1">
-            Showcase your brand or product
-          </span>
-          <span className="block text-sm text-muted-foreground">
-            Beautiful, focused landing pages and portfolios designed to convert
-            visitors into customers. We craft compelling layouts and clear
-            calls-to-action to help you stand out and achieve your goals.
-            Whether you need a single-page site for a campaign or a personal
-            portfolio to highlight your work, we make sure your online presence
-            leaves a lasting impression.
-          </span>
-        </>
+        <ul className="list-disc leading-8 pl-5 text-muted-foreground space-y-1 mt-1">
+          <li>Transform outdated designs into modern aesthetics</li>
+          <li>Improved navigation and user experience</li>
+          <li>Faster load times and better performance</li>
+          <li>SEO and analytics optimization</li>
+          <li>Mobile-friendly and accessible layout</li>
+          <li>Designed to increase leads, sales, and engagement</li>
+          <li>Complete brand refresh and visual identity update</li>
+        </ul>
       ),
-      icon: <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
+      icon: <Cpu className="w-6 h-6 text-gray-400" />,
+      color: "#0a0a0a",
     },
     {
-      title: "Website Redesign & Optimization",
-      description: (
-        <>
-          <span className="block font-semibold mb-1">
-            Refresh and boost your site
-          </span>
-          <span className="block text-sm text-muted-foreground">
-            Is your website looking outdated or not performing well? We
-            transform old sites into modern, high-converting experiences.
-          </span>
-          <ul className="list-disc leading-7 pl-5 text-sm text-muted-foreground space-y-1 mt-1">
-            <li>Modern, clean visual design</li>
-            <li>Improved navigation and user experience</li>
-            <li>Faster load times and better performance</li>
-            <li>SEO and analytics optimization</li>
-            <li>Mobile-friendly and accessible</li>
-            <li>Designed to increase leads, sales, and engagement</li>
-          </ul>
-        </>
-      ),
-      icon: <Cpu className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
+      title: "Landing Pages",
+      label: "Marketing",
+      description:
+        "Converting landing pages with compelling layouts, clear calls-to-action, and optimized to turn visitors into loyal customers.",
+      icon: <Users className="w-6 h-6 text-gray-400" />,
+      color: "#0a0a0a",
     },
     {
       title: "CMS Integration",
-      description: (
-        <>
-          <span className="block font-semibold mb-1">
-            Easy content management
-          </span>
-          <span className="block text-sm text-muted-foreground">
-            Update your site&apos;s text, images, and blog posts anytime with
-            WordPress or a headless CMS—no coding needed.
-          </span>
-        </>
-      ),
-      icon: <Database className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
-    },
-    {
-      title: "Domain, Hosting & Deployment",
-      description: (
-        <>
-          <span className="block font-semibold mb-1">
-            Launch your site, stress-free
-          </span>
-          <span className="block text-sm text-muted-foreground">
-            We handle domain registration, secure hosting, and deployment so
-            your website is live and reliable.
-          </span>
-        </>
-      ),
-      icon: <Code className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />,
+      label: "Content",
+      description:
+        "Easily manage your website content with headless CMS—update text, images, and blog posts anytime.",
+      icon: <Database className="w-6 h-6 text-gray-400" />,
+      color: "#0a0a0a",
     },
   ];
 
   const titleRef = useRef(null);
   const descRef = useRef(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const bentoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -156,7 +103,7 @@ export default function Services() {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       descRef.current,
@@ -172,102 +119,68 @@ export default function Services() {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
-      cardsRef.current,
+      bentoRef.current,
       { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
         duration: 0.7,
-        stagger: 0.15,
         delay: 0.3,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: cardsRef.current[0],
+          trigger: bentoRef.current,
           start: "top 85%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
   }, []);
 
   return (
-    <section id="services" className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-black dark:via-black dark:to-black pointer-events-none" /> */}
+    <section
+      id="services"
+      className="relative py-12 sm:py-16 lg:py-20 overflow-hidden"
+    >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="shiny-container">
             <ShinyText text="Our Services" speed={3} />
           </div>
-          <h2 ref={titleRef} className="my-4 sm:my-6 text-3xl sm:text-4xl md:text-5xl font-bold text-center tracking-tight px-4 sm:px-6">
+          <h2
+            ref={titleRef}
+            className="my-4 sm:my-6 text-3xl sm:text-4xl md:text-5xl font-bold text-center tracking-tight px-4 sm:px-6"
+          >
             Digital Solutions
           </h2>
-          <p ref={descRef} className="text-base sm:text-lg mb-16 sm:mb-20 text-foreground/70 px-4">
+          <p
+            ref={descRef}
+            className="text-base sm:text-lg mb-16 sm:mb-20 text-foreground/70 px-4"
+          >
             Digital solutions for every business need, crafted with precision
             and innovation.
           </p>
         </div>
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(160px,1fr)] sm:auto-rows-[minmax(180px,1fr)] gap-4 sm:gap-0 overflow-hidden">
-          {services.map((service, i) => (
-            <div key={service.title} ref={el => { cardsRef.current[i] = el; }} className={cn(
-              "col-span-1",
-              // Responsive grid classes
-              service.title === "Landing Page & Portfolio Sites" && "sm:col-span-2 lg:col-span-2",
-              service.title === "Website Redesign & Optimization" && "sm:row-span-2 lg:row-span-2"
-            )}>
-              <FeatureCard {...service} />
-            </div>
-          ))}
+        {/* Magic Bento Grid */}
+        <div ref={bentoRef} className="flex justify-center">
+          <MagicBento
+            cards={services}
+            textAutoHide={false}
+            enableStars
+            enableSpotlight
+            enableBorderGlow={true}
+            enableTilt={false}
+            enableMagnetism={false}
+            clickEffect
+            spotlightRadius={400}
+            particleCount={12}
+            glowColor="128, 128, 128"
+            disableAnimations={false}
+          />
         </div>
       </div>
     </section>
   );
 }
-
-const FeatureCard = ({
-  title,
-  description,
-  icon,
-  className,
-}: {
-  title: string;
-  description: React.ReactNode;
-  icon: React.ReactNode;
-  className?: string;
-}) => {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  const spotlightColor =
-    resolvedTheme === "light"
-      ? "rgba(0, 0, 0, 0.2)"
-      : "rgba(249, 249, 249, 0.2)";
-  return (
-    <SpotlightCard
-      spotlightColor={spotlightColor}
-      className={cn(
-        "flex flex-col items-start p-4 sm:p-6 lg:p-8 border border-neutral-400 dark:border-white/[0.1] transition-all duration-300 bg-transparent backdrop-blur-sm h-full min-h-[160px] sm:min-h-[180px] rounded-none",
-        className
-      )}
-    >
-      <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
-        {icon}
-        <span className="text-sm sm:text-base font-bold tracking-tight text-foreground">
-          {title}
-        </span>
-      </div>
-      <div className="mt-1 sm:mt-2">{description}</div>
-    </SpotlightCard>
-  );
-};

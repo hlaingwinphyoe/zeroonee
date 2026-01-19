@@ -15,7 +15,7 @@ const projects = [
     badges: ["Web Development"],
     description:
       "Discover your future and gain clarity with Tarot by Charm. Expert tarot readings, love & career insights, and personalized spiritual guidance.",
-    link: "https://www.tarotbycharm.com",
+    link: "https://www.futureadvicebycharm.com",
     highlight: true,
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     badges: ["Web Design", "UX Research"],
     description:
       "The ultimate platform for job seekers. Explore thousands of opportunities, upload your resume, and connect with top employers.",
-    link: "https://www.jobseeker.tarotbycharm.com",
+    link: "https://antiquewhite-chinchilla-670257.hostingersite.com",
     highlight: false,
   },
   {
@@ -60,7 +60,7 @@ function Projects() {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       descRef.current,
@@ -76,7 +76,7 @@ function Projects() {
           start: "top 80%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
     gsap.fromTo(
       cardsRef.current,
@@ -93,7 +93,7 @@ function Projects() {
           start: "top 85%",
           toggleActions: "play none none none",
         },
-      }
+      },
     );
   }, []);
 
